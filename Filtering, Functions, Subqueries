@@ -41,7 +41,45 @@ Logical operators can be used to combine two Boolean values and return a result 
 The following operators can be used:
 
 ```SQL
-AND
-OR
-IN
-NOT
+AND -- True if both expressions are true
+OR -- True if either expression is true
+IN -- True if an operand is equal to one of a list of expressions
+NOT -- Returns True if an expression is not true
+
+```SQL
+SELECT ID, FirstName, LastName, Age
+FROM customers
+WHERE Age >= 30 AND Age <= 40;
+```
+AND OR
+The statement below selects all customers from the city "New York" AND with the age equal to "30" OR “35":
+
+```SQL
+SELECT * FROM customers
+WHERE City = 'New York'
+AND (Age=30 OR Age=35);
+```
+
+Drag and drop from the options below to select customers whose ids are either 1 or 2, and whose city is ''Boston''.
+```SQL
+SELECT * FROM customers
+WHERE (id = 1 OR id = 2)
+AND city = 'Boston'
+```
+
+----------------------------------------------IN NOT IN-------------------------------------------
+The in operator lets you make your query more clean
+
+```SQL
+SELECT * FROM customers 
+WHERE City IN ('New York', 'Los Angeles', 'Chicago');
+```
+
+The NOT IN operator allows you to exclude a list of specific values from the result set.
+
+If we add the NOT keyword before IN in our previous query, customers living in those cities will be excluded:
+```SQL
+SELECT * FROM customers 
+WHERE City NOT IN ('New York', 'Los Angeles', 'Chicago');
+```
+
