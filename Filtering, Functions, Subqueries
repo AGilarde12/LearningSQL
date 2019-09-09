@@ -1,0 +1,47 @@
+
+------------------------------------------------WHERE-------------------------------------------
+
+The WHERE clause is used to extract only those records that fulfill a specified criterion.
+
+The syntax for the WHERE clause:
+```SQL
+SELECT column_list 
+FROM table_name
+WHERE condition;
+```
+
+Drag and drop from the options below to select the name of the student whose id is equal to 23.
+```SQL
+SELECT id,name
+FROM students
+WHERE id = 23
+```
+
+
+-----------------------------------------------BETWEEN----------------------------------------
+The BETWEEN operator selects values within a range. The first value must be lower bound and the second value, the upper bound.
+
+The syntax for the BETWEEN clause is as follows:
+```SQL
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+```
+
+The following SQL statement selects all records with IDs that fall between 3 and 7:
+```SQL
+SELECT * FROM customers 
+WHERE ID BETWEEN 3 AND 7;
+```
+
+---------------------------------------------AND OR ETC---------------------------------------
+Logical Operators
+
+Logical operators can be used to combine two Boolean values and return a result of true, false, or null.
+The following operators can be used:
+
+```SQL
+AND
+OR
+IN
+NOT
