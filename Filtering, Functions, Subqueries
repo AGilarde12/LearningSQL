@@ -152,3 +152,16 @@ FROM items WHERE name
 LIKE '%boxes of frogs' AND 
 seller_id IN (68, 6, 18)
 ```SQL
+
+
+QUIZ
+Drag and drop from the options below to select name and age from ''students'',
+where age is greater than the average of all ages. Use a subquery to calculate the average value of age.
+
+```SQL
+SELECT name, age 
+FROM students
+WHERE age >
+(SELECT AVG(age)
+ FROM students)
+```
