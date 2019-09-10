@@ -141,3 +141,14 @@ For example, to select employees whose FirstNames begin with the letter A, you w
 SELECT * FROM employees 
 WHERE FirstName LIKE 'A%';
 ```
+
+-------------------------------------LIKE AND IN -------------------------------------------------
+Drag and drop from the options below to complete the statement, which selects ''name'' 
+and minimum of the "cost'' from ''items'', filtering by name and seller id.
+
+```SQL
+SELECT name, MIN(cost) 
+FROM items WHERE name 
+LIKE '%boxes of frogs' AND 
+seller_id IN (68, 6, 18)
+```SQL
