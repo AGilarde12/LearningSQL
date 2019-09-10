@@ -83,3 +83,61 @@ SELECT * FROM customers
 WHERE City NOT IN ('New York', 'Los Angeles', 'Chicago');
 ```
 
+----------------------------------------------CONCAT----------------------------------------------
+The CONCAT function is used to concatenate two or more text values and returns the concatenating string.
+
+Let's concatenate the FirstName with the City, separating them with a comma:
+```SQL
+SELECT CONCAT(FirstName, ', ' , City) FROM customers;
+```
+
+MAKE IT A NEW COLUMN
+```
+SELECT CONCAT(FirstName,', ', City) AS new_column 
+FROM customers;
+```
+
+--------------------------------------------UPPER AND LOWER---------------------------------------
+The UPPER function converts all letters in the specified string to uppercase.
+The LOWER function converts the string to lowercase.
+
+The following SQL query selects all LastNames as uppercase:
+```
+SELECT FirstName, UPPER(LastName) AS LastName 
+FROM employees;
+```
+
+Similarly, the AVG function returns the average value of a numeric column:
+```SQL
+SELECT AVG(Salary) FROM employees;
+```
+
+
+-----------------------------------------SUBQUERRY-----------------------------------------------
+A single subquery will return the same result more easily.
+```
+SELECT FirstName, Salary FROM employees 
+WHERE  Salary > (SELECT AVG(Salary) FROM employees) 
+ORDER BY Salary DESC;
+```
+
+
+
+
+***************************************THE LIKE OPERATOR*******************************************
+The Like Operator
+
+The LIKE keyword is useful when specifying a search condition within your WHERE clause.
+```
+SELECT column_name(s)
+FROM table_name
+WHERE column_name LIKE pattern;
+```
+
+SQL pattern matching enables you to use "_" to match any single character and "%" to match an arbitrary number of characters (including zero characters).
+
+For example, to select employees whose FirstNames begin with the letter A, you would use the following query:
+```
+SELECT * FROM employees 
+WHERE FirstName LIKE 'A%';
+```
