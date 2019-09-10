@@ -46,6 +46,7 @@ AND -- True if both expressions are true
 OR -- True if either expression is true
 IN -- True if an operand is equal to one of a list of expressions
 NOT -- Returns True if an expression is not true
+```
 
 ```SQL
 SELECT ID, FirstName, LastName, Age
@@ -153,7 +154,7 @@ SELECT name, MIN(cost)
 FROM items WHERE name 
 LIKE '%boxes of frogs' AND 
 seller_id IN (68, 6, 18)
-```SQL
+```
 
 
 QUIZ
