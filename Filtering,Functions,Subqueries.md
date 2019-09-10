@@ -1,5 +1,6 @@
+#Filtering
 
-------------------------------------------------WHERE-------------------------------------------
+## WHERE
 
 The WHERE clause is used to extract only those records that fulfill a specified criterion.
 
@@ -18,7 +19,7 @@ WHERE id = 23
 ```
 
 
------------------------------------------------BETWEEN----------------------------------------
+## BETWEEN
 The BETWEEN operator selects values within a range. The first value must be lower bound and the second value, the upper bound.
 
 The syntax for the BETWEEN clause is as follows:
@@ -34,7 +35,7 @@ SELECT * FROM customers
 WHERE ID BETWEEN 3 AND 7;
 ```
 
----------------------------------------------AND OR ETC---------------------------------------
+## AND OR
 Logical Operators
 
 Logical operators can be used to combine two Boolean values and return a result of true, false, or null.
@@ -67,7 +68,7 @@ WHERE (id = 1 OR id = 2)
 AND city = 'Boston'
 ```
 
-----------------------------------------------IN NOT IN-------------------------------------------
+## IN OR OUT
 The in operator lets you make your query more clean
 
 ```SQL
@@ -83,7 +84,7 @@ SELECT * FROM customers
 WHERE City NOT IN ('New York', 'Los Angeles', 'Chicago');
 ```
 
-----------------------------------------------CONCAT----------------------------------------------
+## CONCAT
 The CONCAT function is used to concatenate two or more text values and returns the concatenating string.
 
 Let's concatenate the FirstName with the City, separating them with a comma:
@@ -97,7 +98,8 @@ SELECT CONCAT(FirstName,', ', City) AS new_column
 FROM customers;
 ```
 
---------------------------------------------UPPER AND LOWER---------------------------------------
+## UPPER AND LOWER
+
 The UPPER function converts all letters in the specified string to uppercase.
 The LOWER function converts the string to lowercase.
 
@@ -113,7 +115,7 @@ SELECT AVG(Salary) FROM employees;
 ```
 
 
------------------------------------------SUBQUERRY-----------------------------------------------
+## SUBQUERRY
 A single subquery will return the same result more easily.
 ```
 SELECT FirstName, Salary FROM employees 
@@ -124,7 +126,7 @@ ORDER BY Salary DESC;
 
 
 
-***************************************THE LIKE OPERATOR*******************************************
+## LIKE OPERATOR
 The Like Operator
 
 The LIKE keyword is useful when specifying a search condition within your WHERE clause.
@@ -142,7 +144,7 @@ SELECT * FROM employees
 WHERE FirstName LIKE 'A%';
 ```
 
--------------------------------------LIKE AND IN -------------------------------------------------
+## LIKE AND IN
 Drag and drop from the options below to complete the statement, which selects ''name'' 
 and minimum of the "cost'' from ''items'', filtering by name and seller id.
 
