@@ -90,3 +90,39 @@ The RIGHT JOIN returns all the rows from the right table (items), even if there 
 See Image:
 
 ![Right Join](https://api.sololearn.com/DownloadFile?id=2838)
+
+
+## UNION
+Occasionally, you might need to combine data from multiple tables into one comprehensive dataset. This may be for tables with similar data within the same database or maybe there is a need to combine similar data across databases or even across servers.
+
+To accomplish this, use the UNION and UNION ALL operators.
+
+UNION combines multiple datasets into a single dataset, and removes any existing duplicates.
+UNION ALL combines multiple datasets into one dataset, but does not remove duplicate rows.
+UNION ALL is faster than UNION, as it does not perform the duplicate removal operation over the data set.
+
+The UNION operator is used to combine the result-sets of two or more SELECT statements.
+
+All SELECT statements within the UNION must have the same number of columns. The columns must also have the same data types. Also, the columns in each SELECT statement must be in the same order.
+The syntax of UNION is as follows:
+```SQL
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+```
+
+### UNION WITH NULL
+If your columns don't match exactly across all queries, you can use a NULL (or any other) value such as:
+```SQL
+SELECT FirstName, LastName, Company FROM businessContacts
+UNION
+SELECT FirstName, LastName, NULL FROM otherContacts;
+```
+UNION ALL selects all rows from each table and combines them into a single table.
+
+The following SQL statement uses UNION ALL to select data from the First and Second tables:
+```SQL
+SELECT ID, FirstName, LastName, City FROM First
+UNION ALL
+SELECT ID, FirstName, LastName, City FROM Second;
+```
