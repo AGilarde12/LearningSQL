@@ -126,3 +126,137 @@ SELECT ID, FirstName, LastName, City FROM First
 UNION ALL
 SELECT ID, FirstName, LastName, City FROM Second;
 ```
+
+## INSERT INTO
+```SQL
+INSERT INTO table_name
+VALUES (value1, value2, value3,...);
+```
+Or you can specify the columns for the insert:
+
+```SQL
+INSERT INTO table_name (column1, column2, column3, ...,columnN)  
+VALUES (value1, value2, value3,...valueN);
+```
+
+## UPDATE AND WHERE
+The UPDATE statement allows us to alter data in the table.
+
+The basic syntax of an UPDATE query with a WHERE clause is as follows:
+```SQL
+UPDATE table_name
+SET column1=value1, column2=value2, ...
+WHERE condition;
+```
+You specify the column and its new value in a comma-separated list after the SET keyword.
+If you omit the WHERE clause, all records in the table will be updated!
+
+Example:
+```SQL
+UPDATE students 
+SET university='Stanford'
+WHERE name='John';
+```
+
+Updating more than one column:
+```SQL
+UPDATE Employees 
+SET Salary=5000, FirstName='Robert'
+WHERE ID=1;
+```
+
+## Creating a table
+```SQL
+CREATE TABLE table_name
+(
+column_name1 data_type(size),
+column_name2 data_type(size),
+column_name3 data_type(size),
+....
+columnN data_type(size)
+);
+```
+
+Assume that you want to create a table called "Users" that consists of four columns: UserID, LastName, FirstName, and City.
+Use the following CREATE TABLE statement:
+```SQL
+CREATE TABLE Users
+(
+   UserID int,
+   FirstName varchar(100), 
+   LastName varchar(100),
+   City varchar(100),
+   PRIMARY KEY(UserID)
+); 
+```
+
+### Types of Data:
+```SQL
+Numeric
+INT -A normal-sized integer that can be signed or unsigned.
+FLOAT(M,D) - A floating-point number that cannot be unsigned. You can optionally define the display length (M) and the number of decimals (D).
+DOUBLE(M,D) - A double precision floating-point number that cannot be unsigned. You can optionally define the display length (M) and the number of decimals (D).
+
+Date and Time
+DATE - A date in YYYY-MM-DD format.
+DATETIME - A date and time combination in YYYY-MM-DD HH:MM:SS format.
+TIMESTAMP - A timestamp, calculated from midnight, January 1, 1970
+TIME - Stores the time in HH:MM:SS format.
+
+String Type
+CHAR(M) - Fixed-length character string. Size is specified in parenthesis. Max 255 bytes.
+VARCHAR(M) - Variable-length character string. Max size is specified in parenthesis.
+BLOB - "Binary Large Objects" and are used to store large amounts of binary data, such as images or other types of files.
+TEXT - Large amount of text data.
+```
+
+## CONSTRAINTS
+The following are commonly used SQL constraints:
+```SQL
+NOT NULL - Indicates that a column cannot contain any NULL value.
+UNIQUE - Does not allow to insert a duplicate value in a column. The UNIQUE constraint maintains the uniqueness of a column in a table. More than one UNIQUE column can be used in a table.
+PRIMARY KEY - Enforces the table to accept unique data for a specific column and this constraint create a unique index for accessing the table faster.
+CHECK - Determines whether the value is valid or not from a logical expression.
+DEFAULT - While inserting data into a table, if no value is supplied to a column, then the column gets the value set as DEFAULT.
+```
+
+## Creating a View
+```SQL
+CREATE VIEW List AS
+SELECT FirstName, Salary
+FROM  Employees;
+```
+
+You can the query the List as you're own query
+```SQL
+SELECT * FROM List;
+```
+
+Excercise:
+Drag and drop from the options below to create a view named ''temp'' for students with the highest marks.
+```SQL
+CREATE VIEW temp AS 
+SELECT id, name, mark 
+FROM students 
+ORDER BY mark DESC 
+LIMIT 10;
+```
+
+### Quiz
+Rearrange to select all student names and university names (use left join to show all student names).
+```SQL
+SELECT students.names, universities.names
+FROM students
+LEFT OUTER JOIN universities
+ON students.university_id=universities.id
+```
+
+Drag and drop from the options below to insert a data item into the ''people'' table.
+```SQL
+INSERT INTO people
+VALUES ('John Smith', '1', 22);
+```
+
+
+
+
