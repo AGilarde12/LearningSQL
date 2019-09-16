@@ -36,4 +36,16 @@ RIGHT
 OUTER JOIN cities
 ON cities.id=customers.city_id;
 ```
+In the university's table containing student data, the students' last names have been omitted. Correct this by adding a new column to the table.
+```sql
+ALTER TABLE students
+ADD last_name VARCHAR(100);
+```
+
+Retrieve from MIT, Stanford, and Harvard the names of all students whose first name is Jake.
+```sql
+SELECT name FROM students
+WHERE university
+IN ('MIT', 'Stanford', 'Harvard') 
+AND name='Jake';
 
