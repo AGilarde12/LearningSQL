@@ -30,3 +30,31 @@ LIMIT 100
 ```
 
 You need the ages of all bears and lions. The first query shows the ages of bears and birds from zoo1, the other shows the ages of lions and crocodiles from zoo2.
+```sql
+SELECT age FROM zoo1
+WHERE animal IN ('bear', 'bird')
+UNION
+SELECT age FROM zoo2
+WHERE animal IN ('lion', 'crocodile')
+```
+
+create a list of customers in the form "name is from city".
+```sql
+SELECT
+CONCAT(name, ' is from ', city)
+FROM customers;
+```
+The zoo administration wants a list of animals whose age is greater than the average age of all of the animals. 
+```sql
+SELECT * FROM zoo
+WHERE age >
+(SELECT AVG(age) 
+FROM zoo)
+```
+
+There are many wolves in the zoo: black wolf, white wolf, lucky wolf, little wolf. They all have 'wolf' at the end of their names. Print the ages of all of the wolves.
+
+```sql
+SELECT age FROM zoo
+WHERE animal LIKE '%wolf'
+```
