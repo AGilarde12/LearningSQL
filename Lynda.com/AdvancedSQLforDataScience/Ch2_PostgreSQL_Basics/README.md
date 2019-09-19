@@ -1,4 +1,4 @@
-# Chapter 2
+# Chapter 2 - Basic Statistical Functions
 
 ## Mock database
 In this chapter we are creating a mock_staff database using the mock_staff.sql script seen in this repository.
