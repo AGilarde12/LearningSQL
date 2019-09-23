@@ -31,3 +31,15 @@ select distinct
 from
   staff;
 ```
+
+Below we concatenate two character strings together:
+
+```sql
+/* Concatenate two character strings */
+select
+  job_title || '-' || department
+from
+  staff;
+```
+
+ADDMOREHERE
