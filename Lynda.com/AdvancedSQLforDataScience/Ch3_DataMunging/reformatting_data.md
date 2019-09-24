@@ -42,4 +42,9 @@ from
   staff;
 ```
 
-ADDMOREHERE
+Trimming whitepsace:
+```sql
+SELECT
+   trim('   Software Engineer  ')
+```
+
