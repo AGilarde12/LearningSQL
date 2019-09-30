@@ -1,0 +1,1 @@
+In this excercise we group data from the staff, company divisons, and company regencetable. We want to createa view withthe approrpriate joins. This savestime and saves us from having to repeatedly right join statements
