@@ -28,4 +28,4 @@ FROM
 	staff_div_reg
 ```
 
-All the rows we ned are returned
+All the rows we need are returned
